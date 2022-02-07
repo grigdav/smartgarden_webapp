@@ -1,0 +1,132 @@
+$max-width: 1200px;
+
+$font_family_os: "Montserrat", Arial, Helvetica, sans-serif;
+
+$text-color: #434343;
+
+@mixin transition ($property){
+    -webkit-transition: $property 0.3s ease 0s;
+    -moz-transition: $property 0.3s ease 0s;
+    -o-transition: $property 0.3s ease 0s;
+    transition: $property 0.3s ease 0s;
+}
+
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-height: 100%;
+    min-width: 320px;
+    
+}
+
+.page_width {
+    padding: 0px 50px;
+    margin: 0 auto;
+    max-width: $max-width;
+    position: relative;
+
+    // opacity: 50%;
+}
+@media screen and (max-width: 1024px){
+    .page_width{
+        padding: 0 30px;
+    }
+}
+@media screen and (max-width: 425px){
+    .page_width{
+        padding: 0 20px;
+    }
+}
+
+
+body{
+    font-family: $font_family_os;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    text-transform: uppercase;
+    color: rgb(59, 219, 59);
+}
+
+a{
+    text-decoration: none;
+    color: $text-color;
+    @include transition(all);
+    
+    &:hover{
+        color: ç;
+    }
+}
+
+.zaglushka{
+    margin-top: 280px;
+}
+
+.contacts{
+    margin-top: 70px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+
+    a{
+        // overflow: hidden;
+        box-sizing: border-box;
+        display: block;
+        width: 20%;
+        text-align: center;
+        padding: 40px 0;
+        border: 1px solid $text-color;
+        border-radius: 10px;
+    
+        &:hover{
+            color: rgb(59, 219, 59);
+            border: 1px solid rgb(59, 219, 59);
+        }
+    }
+}
+
+
+
+@media screen and (max-width:1240px) {
+    .zaglushka{
+        margin-top: 180px;
+    }
+    .contacts{
+        flex-wrap: wrap;
+        width: 70%;
+        margin: 70px auto 0 auto;
+    
+        a{
+            width: 45%;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width:795px) {
+    .contacts{
+        width: 100%;
+        margin: 70px 0 0 0;
+    
+        a{
+            width: 45%;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width:590px) {
+    .zaglushka{
+        margin-top: 80px;
+    }
+    .contacts{
+        a{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+}
