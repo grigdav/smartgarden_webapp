@@ -1,1 +1,3 @@
-# smartgarden_webapp
+# Smart Garden WebApp main repo
+
+
