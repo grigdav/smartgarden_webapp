@@ -24,10 +24,11 @@ $text-color: #434343;
 .page_width {
     padding: 0px 50px;
     margin: 0 auto;
+    left: 0;
+    top: 0;
     max-width: $max-width;
     position: relative;
 
-    // opacity: 50%;
 }
 @media screen and (max-width: 1024px){
     .page_width{
@@ -46,87 +47,305 @@ body{
 }
 
 h1{
-    text-align: center;
     font-family: 'Comfortaa', cursive;
     text-transform: uppercase;
-    color: rgb(59, 219, 59);
+    color: $text-color;
+    margin-top: 50px;
+    position: relative;
+
+    &::before{
+        content: '';
+        width: 100%;
+        height: 2px;
+        left: -101%;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $text-color;
+        position: absolute; 
+    }
 }
 
 a{
     text-decoration: none;
     color: $text-color;
     @include transition(all);
-    
-    &:hover{
-        color: ç;
-    }
 }
 
-.zaglushka{
-    margin-top: 280px;
+.comming_soon{
+    display: flex;
+    flex-direction: column;
+    color: $text-color;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+
+    &::before{
+        content: '';
+        width: 100%;
+        height: 200%;
+        left: -40%;
+        top: 0;
+        background: #fff;
+        position: absolute; 
+        z-index: 0;
+    }
+}
+.text{
+    position: relative;
+    z-index: 1;
+}
+span{
+    color: #14AC0B;
 }
 
 .contacts{
     margin-top: 70px;
-    width: 100%;
-    justify-content: space-between;
-    display: flex;
+    width: 50%;
+    z-index:1;
 
-    a{
-        // overflow: hidden;
-        box-sizing: border-box;
+    a{  
         display: block;
-        width: 20%;
-        text-align: center;
-        padding: 40px 0;
-        border: 1px solid $text-color;
-        border-radius: 10px;
+        font-size: 18px;
+        margin-bottom: 10px;
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid $text-color;
     
         &:hover{
-            color: rgb(59, 219, 59);
-            border: 1px solid rgb(59, 219, 59);
+            padding-top: 25px;
+            border-bottom: 5px solid $text-color;
         }
     }
 }
 
+.logo{
+    width: 400px;
+    display: block;
+    margin-top: 100px;
+}
+
+.gears_big{
+    position: absolute;
+    right: 0px;
+    bottom: -150px;
+    width: 600px;
+    animation: rot 4s infinite;
+    @include transition(all);
+}
+.gears_smole{
+    opacity: 60%;
+    position: absolute;
+    right: 500px;
+    bottom: -200px;
+    width: 520px;
+    animation: invert-rot 3s infinite;
+    @include transition(all);
+    filter: blur(4px);
+
+}
+
+.giars_b_2{
+    left: auto;
+    top: -150px;
+    right: 0px;
+    opacity: 80%;
+    filter: blur(2px);
+
+    animation: invert-rot 6s infinite;
+}
+.gears_s_2{
+    left: auto;
+    right: -320px;
+    bottom: 180px;
+
+}
+
+.bigst{
+    width: 800px;
+    top: -170px;
+    right: 500px;
+}
+
+@keyframes rot{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+@keyframes invert-rot{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(-360deg);}
+}
 
 
-@media screen and (max-width:1240px) {
-    .zaglushka{
-        margin-top: 180px;
+
+@media screen and (max-width:1600px){
+    .gears_big{
+        width: 500px;
+        bottom: -100px;
+    }
+    .gears_smole{
+        width: 450px;
+        right: 400px;
+        bottom: -100px;
+
+    }
+    .giars_b_2{
+        top: -100px;
+    }
+    .gears_s_2{
+        left: auto;
+        right: -220px;
+        bottom: 230px;
+
+    }
+    .bigst{
+        width: 650px;
+        top: -100px;
+        right: 400px;
+
+    }
+}
+@media screen and (max-width:1380px){
+    .gears_big{
+        width: 450px;
+        right: -50px;
+        bottom: -100px;
+    }
+    .gears_smole{
+        width: 350px;
+    }
+    .giars_b_2{
+        top: -150px;
+    }
+    .bigst{
+        width: 550px;
+        top: -50px;
+        right: 330px;
+
+    }
+}
+@media screen and (max-width:1040px){
+    .comming_soon{
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+
+        &::before{
+            height: 120%;
+            width: 150%;
+        }
+    }
+    h1{
+        &:after{
+            content: '';
+            width: 100%;
+            height: 2px;
+            left: auto;
+            right: -101%;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $text-color;
+            position: absolute; 
+        }
     }
     .contacts{
-        flex-wrap: wrap;
-        width: 70%;
-        margin: 70px auto 0 auto;
-    
-        a{
-            width: 45%;
-            margin-bottom: 20px;
-        }
+        margin-top: 40px;
+    }
+    .logo{
+        width: 330px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    .gears_s_2{
+        display: none;
+    }
+
+    .gears_b_2{
+        display: none;
+    }
+
+    .bigst{
+        width: 600px;
+
+        top: auto;
+        right: auto;
+        left: -150px;
+
     }
 }
 
-@media screen and (max-width:795px) {
+@media screen and (max-width:870px){
+    .gears_big{
+        width: 300px;
+    }
+    .gears_smole{
+        width: 250px;
+        right: 300px;
+    }
+    .bigst{
+        width: 500px;
+    }
+}
+
+@media screen and (max-width:700px){
+    .contacts{
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .gears_smole{
+        display: none;
+    }
+}
+
+@media screen and (max-width:550px){
+    h1{
+        font-size: 25px;
+        text-align: center;
+
+        &:before{
+            left: -100%;
+        }
+        &::after{
+            right: -100%;
+        }
+    }
+    P{
+        width: 90%;
+        margin: 10px auto 0  auto;
+        text-align: center;
+    }
     .contacts{
         width: 100%;
-        margin: 70px 0 0 0;
-    
-        a{
-            width: 45%;
-            margin-bottom: 20px;
-        }
     }
 }
 
-@media screen and (max-width:590px) {
-    .zaglushka{
-        margin-top: 80px;
+@media screen and (max-width:540px){
+    .gears_big{
+        width: 50%;
     }
-    .contacts{
-        a{
-            width: 100%;
-            margin-bottom: 20px;
-        }
+    .bigst{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:420px){
+    h1{
+        font-size: 20px;
+    }
+    p{
+        font-size: 14px;
+    }
+    .logo{
+        width: 200px;
+    }
+    .gears_big{
+        width: 70%;
+    }
+    .bigst{
+        width: 110%;
+        left: -200px;
     }
 }
