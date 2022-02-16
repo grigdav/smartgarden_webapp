@@ -11,6 +11,8 @@ jobs:
     machine:
         enabled: true
     working_directory: ~/circleci-demo-workflows
+    docker:
+      - image: Some test name
     steps:
       - checkout
       - run:
