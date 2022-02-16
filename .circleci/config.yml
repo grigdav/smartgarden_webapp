@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.8
+    steps:
+      - checkout
+      - run: echo "Start Deploy"
+
+  deploy:
+    machine:
+        enabled: true
+    working_directory: ~/circleci-demo-workflows
+    steps:
+      - checkout
+      - run:
+          name: Deploy Project into Server
+          command:
+            - scp -r * ssh david.grigoryev@89.108.84.191:/var/www/test_dir/
