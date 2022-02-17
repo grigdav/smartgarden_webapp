@@ -10,7 +10,7 @@ jobs:
   deploy:
     machine:
         enabled: true
-    working_directory: ~/master
+    working_directory: ~/main
     steps:
       - checkout
       - run:
