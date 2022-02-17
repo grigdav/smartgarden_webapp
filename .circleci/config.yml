@@ -6,7 +6,6 @@ jobs:
     steps:
       - checkout
       - run: echo "Start Deploy"
-
   deploy:
     machine:
         enabled: true
