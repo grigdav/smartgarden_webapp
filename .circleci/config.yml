@@ -6,7 +6,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "vjWv+ru0Oi4A7WVrB08+6bVXHQgiNUB8O2ae2iivSb0"
+            - "DVVmHPkb9+Tu2sheiIO1bxcdLR2SOnmuJ/5kMzmpWdY"
       - checkout
       - run:
           name: Copy Repo
