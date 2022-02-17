@@ -5,18 +5,15 @@ jobs:
       - image: circleci/python:3.6.9
     steps:
       - checkout
-      - run:
-          name: echo "Start Deploy"
-          command: |
-            scp -r * ssh david.grigoryev@89.108.84.191:/var/www/test_dir/
+      - run: echo "Start Deploy"
+
   deploy:
     machine:
         enabled: true
-    working_directory: ~/circleci-demo-workflows
+    working_directory: ~/master
     steps:
       - checkout
       - run:
           name: Deploy Project into Server
           command:
-            - ssh david.grigoryev@89.108.84.191 "echo ls > out.txt"
             - scp -r * ssh david.grigoryev@89.108.84.191:/var/www/test_dir/
