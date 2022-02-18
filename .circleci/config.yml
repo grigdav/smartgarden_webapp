@@ -13,7 +13,7 @@ jobs:
           command: echo '|1|1js/CzndnHXh9zAVLTUlPNp+lqY=|319gfgetK71I0zpNmX1iTK8+hCY= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCd+FCcHt4koLXATBIwrgzfkNCSDUWReIKNxmbMySQ4TfXB9nGRBuEcbSMyqknlfo5zN2JbtkwAIDXgHsbpzqOY=' >> /home/circleci/.ssh/known_hosts
       - run:
           name: Update SSH
-          command: echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILnVYhNMR1GstxN8CFRWVqU5iWDHr2t3p36/DDajm9Ej david.grigoryev@smartgarden' >> /home/circleci/.ssh/id_ed25519.pub
+          command: echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILnVYhNMR1GstxN8CFRWVqU5iWDHr2t3p36/DDajm9Ej' >> /home/circleci/.ssh/id_ed25519.pub
       - run:
           name:  Deploy Repo
           command: | 
