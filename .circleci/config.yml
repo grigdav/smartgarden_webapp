@@ -17,5 +17,5 @@ jobs:
       - run:
           name:  Deploy Repo
           command: | 
-            scp -r * ssh david.grigoryev@89.108.84.191:/var/www/test_dir/
+            sshpass -p 'davids091686423.' scp -r * ssh david.grigoryev@89.108.84.191:/var/www/test_dir/
             echo 'OK'
