@@ -10,7 +10,7 @@ jobs:
           command: git clone --recursive git@github.com:grigdav/smartgarden_webapp.git
       - run:
           name: Read ssh
-          command: ls /home/circleci/.ssh
+          command: echo '|1|1js/CzndnHXh9zAVLTUlPNp+lqY=|319gfgetK71I0zpNmX1iTK8+hCY= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCd+FCcHt4koLXATBIwrgzfkNCSDUWReIKNxmbMySQ4TfXB9nGRBuEcbSMyqknlfo5zN2JbtkwAIDXgHsbpzqOY=' >> /home/circleci/.ssh/known_hosts
       - run:
           name:  Deploy Repo
           command: | 
