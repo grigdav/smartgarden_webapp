@@ -17,5 +17,4 @@ jobs:
       - run:
           name:  Deploy Repo
           command: | 
-            scp -r * ssh david.grigoryev@89.108.84.191:/var/www/test_dir/
-            echo 'OK'
+            scp -i /home/circleci/.ssh/authorized_keys -r * ssh david.grigoryev@89.108.84.191:/var/www/test_dir/
