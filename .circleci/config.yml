@@ -16,4 +16,4 @@ jobs:
           command: echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILnVYhNMR1GstxN8CFRWVqU5iWDHr2t3p36/DDajm9Ej david.grigoryev@smartgarden' >> /home/circleci/.ssh/authorized_keys
       - run:
           name:  Deploy Repo
-          command: ls -la /home/circleci/.ssh/
+          command: scp -i /home/circleci/.ssh/id_rsa.pub -r * ssh david.grigoryev@89.108.84.191:/var/www/test_dir/
